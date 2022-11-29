@@ -5,6 +5,8 @@
 // a = 2 b = 10 -> max = 10
 // a = -9 b = -3 -> max = -3
 
+Console.Clear();
+
 Console.Write("Input number A: ");
 int a = int.Parse(Console.ReadLine()!);
 

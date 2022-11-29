@@ -4,6 +4,7 @@
 // a = 9, b = -3 -> да 
 // a = -3 b = 9 -> нет
 
+Console.Clear();
 
 Console.Write("Input number A: ");
 int a = int.Parse(Console.ReadLine()!);

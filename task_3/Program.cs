@@ -2,6 +2,8 @@
 // 3 -> Среда 
 // 5 -> Пятница
 
+Console.Clear();
+
 Console.Write("input number: ");
 int number = int.Parse(Console.ReadLine()!);
 

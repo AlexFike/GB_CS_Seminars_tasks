@@ -3,7 +3,9 @@
 
 // 2, 3, 7 -> 7
 // 44 5 78 -> 78
-// 22 3 9 -> 22
+// 22 3 9 -> 22 
+
+Console.Clear();
 
 Console.Write("Input number A: ");
 int a = int.Parse(Console.ReadLine()!);

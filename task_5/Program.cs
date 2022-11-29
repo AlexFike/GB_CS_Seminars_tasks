@@ -2,6 +2,8 @@
 // 4 -> "-4, -3, -2, -1, 0, 1, 2, 3, 4" 
 // 2 -> " -2, -1, 0, 1, 2"
 
+Console.Clear();
+
 Console.Write("input number: ");
 int number = Math.Abs(int.Parse(Console.ReadLine()!));
 

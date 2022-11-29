@@ -1,4 +1,6 @@
 ﻿
+Console.Clear();
+
 Console.Write("input number: ");
 
 int number = int.Parse(Console.ReadLine()!);
