@@ -13,5 +13,5 @@ int a = int.Parse(Console.ReadLine()!);
 Console.Write("Input number B: ");
 int b = int.Parse(Console.ReadLine()!);
 
-if(a > b) Console.Write($"Наибольшее число {a}");
-else Console.Write($"Наибольшее число {b}");
+if(a > b) Console.Write($"Maximum number --> {a}. Minimum number --> {b}");
+else Console.Write($"Maximum number --> {b}. Minimum number --> {a}");
