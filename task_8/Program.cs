@@ -9,9 +9,11 @@ Console.Clear();
 Console.Write("input number N: ");
 int number = int.Parse(Console.ReadLine()!);
 
-Console.Write("All even numbers up to N --> ");
 
-for (int i = 1; i < number+1; i++)
+if (number > 1)
 {
-    if(i%2==0) Console.Write($"{i} ");
+    Console.Write("All even numbers up to N --> ");
+    
+    for (int i = 2; i < number + 1; i += 2) Console.Write($"{i} ");
 }
+else Console.Write("No a even number value");
