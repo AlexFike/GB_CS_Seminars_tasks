@@ -26,4 +26,4 @@ void Weekend(int number)
 
 
 Console.Write("Input day of week: ");
-Weekend(int.Parse(Console.ReadLine())!);
+Weekend(int.Parse(Console.ReadLine()!));
