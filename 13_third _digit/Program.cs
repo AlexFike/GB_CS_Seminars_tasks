@@ -17,29 +17,48 @@ int ThirdDigit(int number, int digit)
     {
         result = result / 10;
     }
-    
-    result =  result%10;
+
+    result = result % 10;
 
     return result;
 }
 
-int numberTest = new Random().Next(1, 10000);
-
-if (numberTest / 100 == 0)
-{
-    Console.WriteLine($"Number {numberTest} does not contain 3 digits");
-}
-else
-{
-    Console.WriteLine($"Third digit of number {numberTest} = {ThirdDigit(numberTest, 3)}");
-}
-
-
-
 char ThirdDigitStr(string number, int digit)
 {
-    return number[digit -1];
+    return number[digit - 1];
 }
-string numberTestStr = Convert.ToString(numberTest);
 
-Console.WriteLine($"Third digit of number {numberTest} = {ThirdDigitStr(numberTestStr, 3)}");
+void CallFunction(string arg, int digit)
+{
+    int numberTest = new Random().Next(1, 1000000);
+    if (arg == "string")
+    {
+        string numberTestStr = Convert.ToString(numberTest);
+
+        if (numberTestStr.Length < digit)
+        {
+            Console.WriteLine($"{numberTestStr} does not contain 3 digits");
+        }
+        else Console.WriteLine($"Third digit {numberTest} = {ThirdDigitStr(numberTestStr, digit)}");
+
+    }
+    if (arg == "int")
+    {
+        if (numberTest / Convert.ToInt32(Math.Pow(10, digit - 1)) == 0)
+        {
+            Console.WriteLine($"{numberTest} does not contain 3 digits");
+        }
+        else Console.WriteLine($"Third digit {numberTest} = {ThirdDigit(numberTest, digit)}");
+    }
+}
+
+Console.Write("Input setеing int or string: ");
+string setArg = Console.ReadLine()!;
+
+Console.Write("Input digit pull: ");
+int number = int.Parse(Console.ReadLine()!);
+
+CallFunction(setArg, number);
+
+
+
