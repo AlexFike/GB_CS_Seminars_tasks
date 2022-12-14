@@ -3,9 +3,9 @@
 // 3, 5 -> 243 (3⁵)
 // 2, 4 -> 16
 
-int Exponentiation(int number, int degree)
+double Exponentiation(double number, int degree)
 {
-    int result = 1;
+    double result = 1;
 
     for (int i = 0; i < degree; i++)
     {
@@ -14,15 +14,50 @@ int Exponentiation(int number, int degree)
     return result;
 }
 
-void CallFunction(int number, int degree)
-{
-    if (degree < 1) Console.WriteLine("Not a natural degree!");
-    else
+var Udegree = new Dictionary<char, char>()
     {
-        Console.WriteLine($"{number} to the degree of {degree} = "
-        + $"{Exponentiation(number, degree)}");
+        {'0', '⁰'},
+        {'1', '¹'},
+        {'2', '²'},
+        {'3', '³'},
+        {'4', '⁴'},
+        {'5', '⁵'},
+        {'6', '⁶'},
+        {'7', '⁷'},
+        {'8', '⁸'},
+        {'9', '⁹'}
+    };
+
+int countControl = 5;
+int count = countControl;
+
+while (true)
+{
+    try
+    {
+        Console.Write($"Input number and natural degree. Attempts: {count} out {countControl}: ");
+        string[] temporaryStr = Console.ReadLine()!.Split();
+        double number = double.Parse(temporaryStr[0]);
+        int degree = int.Parse(temporaryStr[1]);
+
+        Console.OutputEncoding = System.Text.Encoding.Unicode;
+
+        char[] array = degree.ToString().ToCharArray();
+
+        Console.Write($"({number}");
+        foreach (var item in array) Console.Write($"{Udegree[item]}");
+        Console.Write($") = {Exponentiation(number, degree)}");
+        break;
+    }
+    catch
+    {
+        count--;
+    }
+    if (count == 0)
+    {
+        Console.WriteLine("You have exhausted the number of attempts");
+        break;
     }
 }
 
 
-CallFunction(3, 2);
