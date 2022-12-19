@@ -7,8 +7,15 @@
 (double, double) LinesIntersection(double b1, double k1, double b2, double k2)
 {
     double x = (b2 - b1) / (k1 - k2);
-    return (k1 * x + b1, k2 * x + b2);
+    return (x, k2 * x + b2);
 }
 
+void CheckLinesIntersection(double b1, double k1, double b2, double k2)
+{
+    if (k1 == k2 && b1 == b2) Console.WriteLine("Straight lines match");
+    else if (k1 == k2) Console.WriteLine("Straight lines are parallel");
+    else Console.WriteLine("Coordinates of the intersection point => "
+                            + LinesIntersection(b1, k1, b2, k2));
+}
 
-Console.WriteLine($" => {LinesIntersection(2, 5, 4, 9)}");
+CheckLinesIntersection(2, 5, 4, 9);
