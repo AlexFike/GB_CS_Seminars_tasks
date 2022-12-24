@@ -10,33 +10,31 @@ int[,] GetSpiralMatrix(int rows, int columns)
 {
     int[,] result = new int[rows, columns];
     int count = 1;
-    int left = 0;
     int right = 0;
     int i = 0;
     int j = 0;
     int poinBreak = columns * rows;
     while (count < poinBreak)
     {
-        for (j = right, i = left; j < columns - right; j++, count++)
+        for (j = right, i = right; j < columns - right; j++, count++)
         {
             result[i, j] = count;
             // Console.WriteLine("j++ " + count);
             if (count == poinBreak) break;
         }
-        right++;
-        for (i = right, j = j - 1; i < rows - left; i++, count++)
+        for (i = right, j = j - 1; i < rows - right; i++, count++)
         {
             result[i, j] = count;
             // Console.WriteLine("i++ " + count);
             if (count == poinBreak) break;
         }
-        for (i = i - 1, j = j - 1; j >= left; j--, count++)
+        for (i = i - 1, j = j - 1; j >= right; j--, count++)
         {
             result[i, j] = count;
             // Console.WriteLine("j-- " + count);
             if (count == poinBreak) break;
         }
-        left++;
+        right++;
         for (i = i - 1, j = j + 1; i >= right; i--, count++)
         {
             result[i, j] = count;
