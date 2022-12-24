@@ -60,6 +60,5 @@ void PrintMatrix(int[,] array)
 }
 
 
-
 int[,] testMatrix = GetSpiralMatrix(7, 5);
 PrintMatrix(testMatrix);
