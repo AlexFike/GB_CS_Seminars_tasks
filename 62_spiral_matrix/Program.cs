@@ -22,7 +22,7 @@ int[,] GetSpiralMatrix(int rows, int columns)
             // Console.WriteLine("j++ " + count);
             if (count == poinBreak) break;
         }
-        for (i = right, j = j - 1; i < rows - right; i++, count++)
+        for (i = i + 1, j = j - 1; i < rows - right; i++, count++)
         {
             result[i, j] = count;
             // Console.WriteLine("i++ " + count);
