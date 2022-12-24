@@ -54,6 +54,7 @@ int[,] MultMatrix(int[,] matrix1, int[,] matrix2)
 
 // int[,] matrix1 = { { 2, 4 }, { 3, 2 } };
 // int[,] matrix2 = { { 3, 4 }, { 3, 3 } };
+
 Console.Clear();
 int[,] testMatrix1 = GetArray(4, 5, 1, 5);
 PrintArray(testMatrix1);
